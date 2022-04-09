@@ -1,4 +1,3 @@
-# tic tac toe; the 9 boxes are numbered 1-9 left to right top to bottom. enter the number of the box you wish to mark
 a = []
 b = []
 e = [" "," "," "]
@@ -30,29 +29,33 @@ def fella():
   if {1,2,3}.issubset(set(b)) or {1,5,9}.issubset(set(b)) or {1,4,7}.issubset(set(b)) or {3,5,7}.issubset(set(b)) or {3,6,9}.issubset(set(b)) or {7,8,9}.issubset(set(b)) or {4,5,6}.issubset(set(b)):
     return True
 while True:
-  c = int(input("Player 1's turn"))
-  a.append(c)
-  if checka():
-    filla()
-    print(e)
-    print(f)
-    print(g)
-  else:
-    print("try again")
-    break
+  while True:
+    c = int(input("Player 1's turn"))
+    a.append(c)
+    if checka():
+      filla()
+      print(e)
+      print(f)
+      print(g)
+      break
+    else:
+      print("try again")
+      a.remove(c)
   if smella():
     print("player 1 wins!!!")
     break
-  d = int(input("Player 2's turn"))
-  b.append(d)
-  if bool(checka()):
-    filla2()
-    print(e)
-    print(f)
-    print(g)
-  else:
-    print("try again")
-    break
+  while True:
+    d = int(input("Player 2's turn"))
+    b.append(d)
+    if bool(checka()):
+      filla2()
+      print(e)
+      print(f)
+      print(g)
+      break
+    else:
+      print("try again")
+      b.remove(d)
   if fella():
     print("player 2 wins!!")
     break
