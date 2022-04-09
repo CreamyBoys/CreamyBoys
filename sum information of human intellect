@@ -1,0 +1,74 @@
+# even/odd number checker
+x = int(input("ohmygod PLEASE type in a numba, ANY numba"))
+if bool(int(x) % 2):
+  print("ODDDDD")
+else:
+  print("EVENNNN")
+# quadratic solver
+import math
+import cmath
+a = int(input("a?"))
+b = int(input("b?"))
+c = int(input("c?"))
+if (4 * a * c) > (b ** 2):
+  print(complex((-b)/(2 * a), (math.sqrt(( 4 * a * c) - (b ** 2)))/(2 * a)))
+  print(complex((-b)/(2 * a), (-math.sqrt(( 4 * a * c) - (b ** 2)))/(2 * a)))
+elif (4 * a * c) == (b ** 2):
+  print((-b + math.sqrt((b ** 2) - (4 * a * c)))/(2 * a))
+else:
+  print((-b + math.sqrt((b ** 2) - (4 * a * c)))/(2 * a))
+  print((-b - math.sqrt((b ** 2) - (4 * a * c)))/(2 * a))
+# prime number checker
+d = int(input("slime number??"))
+for f in range(2,(d+1)):
+  if f == d:
+    print("slime")
+    break
+  if (d % f) == 0:
+    print("not grime :3")
+    break
+#rock paper glizzy with win,loss tracker; type "cockmaster" to stop
+import random
+k = [0,0]
+while True:
+  e = input("rock paper glizzy")
+  g = random.randint(0,2)
+  h = [0,0]
+  def skibby():
+    k[0] += 1
+    print(str(k))
+  def bibby():
+    k[1] += 1
+    print(str(k))
+  if e == "rock":
+    if g == 0:
+      print("they picked rock :o tie")
+      print(str(k))
+    if g == 1:
+      print("they picked papa you looz")
+      bibby()
+    if g == 2:
+      print("they picked GLIZY  you win")
+      skibby()
+  if e == "paper":
+    if g == 0:
+      print("roq you win")
+      skibby()
+    if g == 1:
+      print("computer paper so tie")
+      print(str(k))
+    if g == 2:
+      print("they glizzy won you lose")
+      bibby()
+  if e == "glizzy":
+    if g == 0:
+      print("they rock you lose")
+      bibby()
+    if g == 1:
+      print("they paper you win")
+      skibby()
+    if g == 2:
+      print("glizzy goblin tie")
+      print(str(k))
+  if e == "cockmaster":
+    break
