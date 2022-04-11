@@ -25,6 +25,9 @@ def checka():
 def smella():
   if {1,2,3}.issubset(set(a)) or {1,5,9}.issubset(set(a)) or {1,4,7}.issubset(set(a)) or {3,5,7}.issubset(set(a)) or {3,6,9}.issubset(set(a)) or {7,8,9}.issubset(set(a)) or {4,5,6}.issubset(set(a)):
     return True
+def bella():
+  if len(a + b) == 9 :
+   return True
 def fella():
   if {1,2,3}.issubset(set(b)) or {1,5,9}.issubset(set(b)) or {1,4,7}.issubset(set(b)) or {3,5,7}.issubset(set(b)) or {3,6,9}.issubset(set(b)) or {7,8,9}.issubset(set(b)) or {4,5,6}.issubset(set(b)):
     return True
@@ -43,6 +46,9 @@ while True:
       a.remove(c)
   if smella():
     print("player 1 wins!!!")
+    break
+  elif bella():
+    print("its a draw :P")
     break
   while True:
     d = int(input("Player 2's turn"))
