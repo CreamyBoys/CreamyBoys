@@ -1,0 +1,43 @@
+from numpy import *
+from matplotlib.pyplot import *
+
+def ThreeDee(c, d, e):  # this might be a little funky lol, not sure how accurate the average difference part is
+    n = 100  # number of computations
+    a = linspace(0, d, n)
+    b = linspace(0, e * pi, n)[:, newaxis]
+
+    fig = figure()
+    ax = fig.add_subplot(projection='3d')  # get some 3D axes
+    ax.plot_surface(a, b, c, cmap="inferno")  # do the surface plot
+    ax.set_xlabel('a')
+    ax.set_ylabel('b')
+    ax.set_zlabel('c')
+    show()
+    
+def PlotList(a_1, a_2, b_1, b_2, n):
+    a = linspace(a_1, a_2, n)
+    b = linspace(b_1, b_2, n)
+    c = []
+
+    for i in b:
+        z = cos(a) * i
+        plot(b, z)
+        c.append(z)
+    title('Plot of sets under operation')
+    xlabel('i')
+    ylabel('operation(for every element in a)')
+    figure()
+
+    for j in range(n - 1):
+        tot = []
+        for k in range(n - 1):
+            d = c[j][k + 1] - c[j][k]
+            tot.append(abs(d))
+        avg = (sum(tot) / len(tot))
+        scatter(j, avg)
+        ylabel('average of differences between elements')
+        title('Plot of average of differences between elements of c')
+    show()
+
+
+PlotList(0, 2 * pi, 1, 5, 50)
