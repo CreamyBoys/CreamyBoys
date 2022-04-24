@@ -1,0 +1,19 @@
+import numpy
+import matplotlib.pyplot as gaaaaa
+def blab(c:complex) :
+    z = c
+    i = 1
+    while i < 25 and (z * z.conjugate()).real < 4:
+        z = z * z + c
+        i += 1
+    return i
+def skab() :
+    blum = numpy.full((1000,1000),0)
+    for x in range(1000):
+        for y in range(1000):
+            gib = blab(complex(0.00248248*x - 2, 0.00226226*y - 1.13))
+            blum[y][x] = gib
+    gaaaaa.imshow(blum, cmap="inferno")
+    gaaaaa.axis("off")
+    gaaaaa.show()
+skab()
